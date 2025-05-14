@@ -67,7 +67,8 @@ export default function AddJobPost({ setOpen, open, setJobs }) {
           closingDate: "",
           experience: "",
         });
-        // Refresh jobs list
+        // Refresh jobs list 
+        
         const jobsResponse = await fetch("/api/getjobs", { cache: "no-store" });
         if (jobsResponse.ok) {
           const jobsData = await jobsResponse.json();
