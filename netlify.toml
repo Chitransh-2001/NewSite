@@ -1,5 +1,10 @@
 [build]
   command = "npm run build"
   publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "18" # or your actual Node version
+  NEXT_PUBLIC_API_URL = "https://example.com/api" # add your environment variables here
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
