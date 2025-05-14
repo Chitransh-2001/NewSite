@@ -1,25 +1,30 @@
-import fs from "fs";
-import path from "path";
-
-const jobsFilePath = path.join(process.cwd(), "data", "jobs.json");
-
+// app/api/jobs/route.js
+import { adminDb } from "../../../../lib/firebaseAdmin";
 export async function GET() {
-    try {
-        let jobs = [];
-        if (fs.existsSync(jobsFilePath)) {
-            const fileData = fs.readFileSync(jobsFilePath, "utf8");
-            jobs = JSON.parse(fileData);
-        }
-
-        return new Response(JSON.stringify(jobs), {
-            status: 200,
-            headers: { "Content-Type": "application/json" },
-        });
-    } catch (error) {
-        console.error("Error fetching jobs:", error);
-        return new Response(JSON.stringify({ error: "Error fetching jobs" }), {
-            status: 500,
-            headers: { "Content-Type": "application/json" },
-        });
-    }
+  try {
+    const snapshot = await adminDb.collection("jobs").get();
+    const jobs = snapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+    return new Response(JSON.stringify(jobs), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  } catch (error) {
+    console.error("Firestore error:", error);
+    return new Response(
+      JSON.stringify({ error: "Failed to fetch jobs" }),
+      { status: 500, headers: { "Content-Type": "application/json" } }
+    );
+  }
 }
+
+
+
+
+
+
+
+
+

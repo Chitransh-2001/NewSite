@@ -52,7 +52,7 @@ export default function EditJobPost({ open, setOpen, job, onUpdate }) {
       onUpdate(form);
       handleClose();
     } else {
-      alert("Error updating job");
+      // alert("Error updating job");
     }
   };
 

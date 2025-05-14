@@ -1,52 +1,63 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-
+import {signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "./../../../lib/firebase";
+import { onAuthStateChanged } from "firebase/auth";
 export default function LoginPage() {
   const router = useRouter();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
+useEffect(() => {
+  const unsubscribe = onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log("User signed in:", user.uid);
+    } else {
+      console.log("No user signed in");
+    }
+  });
+  return () => unsubscribe();
+}, []);
   useEffect(() => {
     // Redirect if already logged in
     if (localStorage.getItem("auth") === "true") {
       router.push("/jobboard");
     }
   }, []);
-
-  //   const handleLogin = (e) => {
-  //     e.preventDefault();
-  //     const storedUsername = process.env.NEXT_PUBLIC_USERNAME;
-  //     const storedPassword = process.env.NEXT_PUBLIC_PASSWORD;
-
-  //     if (username === storedUsername && password === storedPassword) {
-  //       localStorage.setItem("auth", "true"); // Store auth status
-  //       router.push("/jobboard"); // Redirect on success
-  //     } else {
-  //       setError("Invalid username or password");
-  //     }
-  //   };
-  const handleLogin = async (e) => {
-    e.preventDefault();
-
-    const res = await fetch("/api/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password }),
+  useEffect(()=>{
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // router.push("/login");
+        const uid = user?.uid;
+        console.log(uid,"uid")
+      } else{
+        // alert("User is s/igned out")
+      }
     });
-
-    const data = await res.json();
-
-    if (data.success) {
-      localStorage.setItem("auth", "true");
-      router.push("/jobboard");
-    } else {
-      setError(data.message);
+  },[])
+ const handleLogin = async (e) => {
+  e.preventDefault();
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, username, password);
+    const token = await userCredential.user.getIdToken();
+    const response = await fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token }),
+    });
+    const result = await response.json();
+    if (!response.ok) {
+      throw new Error(result.message || "Login failed");
     }
-  };
-
+    localStorage.setItem('auth', 'true');
+    localStorage.setItem('firebaseToken', token);
+    router.push('/jobboard');
+  } catch (error) {
+    setError(error.message);
+    console.error("Login error:", error);
+  }
+};
   return (
     <div className="flex items-center justify-center h-screen">
       <div className="p-6 max-w-sm bg-white rounded-lg shadow-md">
@@ -82,3 +93,9 @@ export default function LoginPage() {
     </div>
   );
 }
+
+
+
+
+
+
