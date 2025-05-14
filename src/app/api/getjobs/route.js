@@ -1,8 +1,9 @@
 // app/api/jobs/route.js
-import { adminDb } from "../../../../lib/firebaseAdmin";
+// import { adminDb } from "../../../../lib/firebaseAdmin";
+import { db } from "../../../../lib/firebase";
 export async function GET() {
   try {
-    const snapshot = await adminDb.collection("jobs").get();
+    const snapshot = await db.collection("jobs").get();
     const jobs = snapshot.docs.map(doc => ({
       id: doc.id,
       ...doc.data()
