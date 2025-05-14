@@ -1,0 +1,811 @@
+.backgroundRor {
+  position: relative;
+  width: 100%;
+  height: 645px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../public/assets/img/rorheader.png");
+}
+.backgroundRor::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+.imageTitle {
+  color: #fff;
+  padding-top: 250px;
+  padding-bottom: 20px;
+  padding-left: 9%;
+  opacity: 0.9;
+}
+.imageSubTitle {
+  color: #fff;
+  padding: 0 30% 0 9%;
+  text-align: left;
+  opacity: 0.9;
+}
+@media (max-width:600px){
+  .imageSubTitle{
+    padding :0 6% 0 6%;
+    text-align: center;
+  }
+  .imageTitle {
+    text-align: "center";
+  }
+}
+.backgroundReact {
+  position: relative;
+  width: 100%;
+  height: 690px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../public/assets/img/reactheader.png");
+}
+.backgroundReact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+.backgroundNode {
+  position: relative;
+  width: 100%;
+  height: 645px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../public/assets/img/headernode.png");
+}
+.backgroundNode::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+.backgroundAngular {
+  position: relative;
+  width: 100%;
+  height: 645px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../public/assets/img/angularheader.png");
+}
+.backgroundAngular::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+.backgroundFullStack {
+  position: relative;
+  width: 100%;
+  height: 690px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../public/assets/img/headerfullstack.png");
+}
+.backgroundFullStack::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+.backgroundUi{
+  position: relative;
+  width: 100%;
+  height: 645px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../public/assets/img/uidevelopment.jpg");
+}
+.backgroundUi::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+.backgroundAWS {
+  position: relative;
+  width: 100%;
+  height: 690px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../public/assets/img/awsheader1.png")
+}
+.backgroundAWS::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+.backgroundHeroku {
+  position: relative;
+  width: 100%;
+  height: 645px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../public/assets/img/hero.png");
+}
+.backgroundHeroku::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+.backgroundMern {
+  position: relative;
+  width: 100%;
+  height: 645px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../public/assets/img/mernstack.png");
+}
+.backgroundMern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(0, 0, 0, 0.5); Dark overlay */
+}
+/* RorDevelopment */
+.rubycontainer{
+  padding: 4% 8%;
+  align-items: center;
+  background-image: url('/assets/img/rorcontent.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.rubyTitle{
+  font-weight: bold;
+  line-height: 1.2;
+  color: #333;
+  margin-bottom: .5rem;
+}
+.rubySubtitle{
+  line-height: 1.5;
+color:#333;
+padding: 15px 0 0 0;
+margin-bottom: 1rem;
+}
+/* Our ROR development solutions */
+.coreQuote {
+  padding: 25px 0 35px 0;
+}
+.OurUsp {
+  color: #650909;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.coreTitleUsp {
+  color:#ffffff;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+.coreTitleUspHire{
+  color:#ffffff;
+  text-transform: capitalize;
+  margin-bottom: 1.5rem;
+}
+.coreDescriptionUsp {
+  color: #ffffff;
+  line-height: 1.5;
+  padding: 0% 1%;
+}
+.uspContainer {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 2% 7% 7% 7%;
+  background-color: #333;
+}
+.uspBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 2% 3%;
+}
+/* .uspBox:hover {
+  border-color: #ebebeb;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  background-color: #ffffff;
+} */
+.uspBoxTitle {
+  font-weight: 500;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: #333;
+}
+.uspBoxDesc {
+  color: #333;
+  line-height: 1.5;
+}
+/* elect Ruby on Rails  */
+.obstaclesContainer{
+  padding: 4% 8% ;
+  background-image: url('/assets/img/rorcontent.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+  }
+  .obstaclesLeft{
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  }
+  .obstaclesLeftTitle{
+  font-weight: bold;
+  line-height: 1.2;
+  color: #333;
+  margin-bottom: 1rem;
+  }
+  .obstaclesLeftDesc{
+  margin-bottom: 1rem;
+  color:#333;
+  line-height: 1.5;
+  }
+  .obstaclesRight{
+  padding-left: 6%;
+  }
+  .obstaclesRightTitle{
+  padding: 3px 0;
+  color:#333;
+   display: flex;
+  }
+  .obstaclesRightIcon{
+  color: #650909;
+  margin-right: 10px;
+  margin-top: 3px;
+  }
+/* Ror expert */
+.containerExpert{
+  background-color: #333;
+  padding: 3% 8%;
+}
+.gridExpert{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column  ;
+}
+.stackGrid{
+  padding: 4% 0;
+}
+.techContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+   flex-wrap:wrap ;
+}
+.techBox{
+  background-color: #ffffff;
+  border-radius: 10px;
+  min-height: 250px;
+  min-width: 250px;
+}
+/* ruby and rails */
+.rubypartnerContainer{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 2% 8% 7% 8%
+}
+.coreTitleUsppartner{
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.coreDescriptionUsppartner{
+  line-height: 1.5;
+  padding: 0% 1%;
+  color: #333;
+}
+.uspBoxPartner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 2% 3%;
+}  
+ .uspBoxPartner:hover {
+  border-color: #ebebeb;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  background-color: #ffffff;
+} 
+/* right framework for Startups */
+.frameworkContainer{
+  padding: 3% 8%;
+  background-color: #333;
+  text-align: center;
+}
+.frameworkGrid{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2% 0;
+}
+.frameworkCard{
+  padding: 0 5%;
+}
+.frameworkCardcontent{
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  padding: 3% 5%;
+}
+.frameworktitle{
+  color: #ffffff;
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.frameworkdesc{
+  color: #ffffff;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+/* react */
+.reactProcessContainer{
+  padding: 4% 8%;
+ background-color: #f3f3f5;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.reactProcessTitle{
+  color:#333;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+.reactdevelopment{
+  border: 1px solid #ebebeb;
+    border-radius: 10px;
+    padding: 25px 27px 25px 27px;
+    /* text-align: center; */
+    background-color: #ffffff;
+    box-shadow: "0px 4px 20px rgba(0, 0, 0, 0.3)";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+/* Angular */
+.angularContainer{
+  padding: 4% 8% ;
+  background-image: url('/assets/img/rorcontent.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.angularintro{
+  margin-bottom: .5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  text-transform: capitalize;
+  color:#333;
+}
+.angularTitle{
+  line-height: 1.5;
+  color: #333;
+}
+.angularTitleRight{
+  line-height: 1.5;
+  color: #333;
+  margin-top: 35px;
+}
+/* AngularJS Development Company */
+/* .angularContainercontent{
+  padding: 4% 8% ;
+} */
+.angularContent{
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 1rem;
+}
+/* Our AngularJS Development Services */
+.cardsProcessangular{
+  border: 1px solid #ebebeb;
+    border-radius: 10px;
+    padding: 25px 27px 25px 27px;
+    /* text-align: center; */
+    box-shadow: "0px 4px 20px rgba(0, 0, 0, 0.3)",
+}
+/* industries we serve */
+.industries{
+  padding:  2%  8% 0 8%;
+  background-color: #f3f5f5;
+}
+.industriesCard{
+  padding: 2% 8%;
+  background-color: #f3f5f5;
+}
+.industriesGrid{
+  background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+}
+.Industriestitle{
+  line-height: 1.2;
+  color: #333;
+  text-align: center;
+}
+/* development */
+.development{
+  padding: 3% 8%;
+}
+.developmentCard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  padding: 20px 25px;
+}
+.developmentCard:hover{
+  border-color: #ebebeb;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+.developmentdesc{
+  margin-bottom: 1rem;
+  color:#333;
+  line-height: 1.5;
+  text-align: center;
+}
+/* React */
+.cardsReact{
+  padding: 3% 8%;
+}
+/* Nodejs */
+.obstaclesRightNode{
+  padding-left: 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  }
+  .ProcessContainer{
+    padding: 3% 8%;
+  }
+  .ProcessGrid{
+    text-align: center;
+  }
+  .cardsContainer{
+    margin-top: 20px;
+  }
+  .cardsProcess{
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    padding: 25px 27px 25px 27px;
+    text-align: center;
+  }
+  .techBoxcard{
+    background-color: #ffffff;
+    min-width: 220px;
+    min-height: 325px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  .belowCardTitle{
+    color: #ffffff;
+    margin: 1rem 0;
+    line-height: 1.2;
+    font-weight: 500;
+    padding: 2% 5%;
+  }
+  .nodePartnerContainer{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 2% 8% 2% 8%
+  }
+/* end to end fullstack development */
+.visionaryContainer{
+  background-color: #f3f5f5;
+  padding: 4% 8%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.visionaryGrid{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.visionaryTitle{
+  font-weight: bold;
+  line-height: 1.2;
+  color: #333;
+  margin-bottom: 1rem;
+  }
+  .visionaryDesc{
+    margin-bottom: 1rem;
+  color:#333;
+  line-height: 1.5;
+  }
+  .visionaryRight{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #ffffff;
+    height: 160px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+ .driveContent{
+  padding: 4% 0 0 0;
+ }
+ .cardContainer{
+  padding: 3% 8%;
+ }
+ .cardDatabaseContainer{
+  padding: 3% 8%;
+  display: flex;
+  justify-content: center;
+ }
+.cardClass {
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+@media (max-width: 900px) {
+  /* sm */
+  .cardImage {
+    width: 40%;
+  }
+}
+.stackContainer{
+  padding: 0 8% 4% 8%;
+}
+.stackContent{
+  text-align: center;
+}
+/* aws development */
+.servicesContainer{
+  padding: 4% 8%;
+ background-color: #333;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.technologyContainer{
+  padding: 4% 8%;
+  background-color: #f8f9fd;
+}
+.technologiesBox{
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  padding: 30px 16px 30px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.technologiesBox:hover{
+  background-color: #ffffff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+.techTitle{
+  font-weight: bold;
+  line-height: 1.2;
+  color: #333;
+  margin-bottom: 3%;
+}
+.techcardtitle{
+  font-weight: bold;
+  line-height: 1.2;
+  color: #333;
+  margin-bottom: .5rem;
+  margin-top: .5rem;
+}
+.client{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 2% 8% 3% 8%
+}
+/* Heroku */
+.ProcessContainerHeroku{
+  padding: 3% 8%;
+  background-color: #333;
+}
+.ProcessHerokuTitle{
+  font-weight: bold;
+  line-height: 1.2;
+  color:#ffffff;
+  margin-bottom: 1rem;
+  }
+  .ProcessHerokuDesc{
+    margin-bottom: 1rem;
+    color:#ffffff;
+    line-height: 1.5;
+    }
+    /* ui/ux development */
+   .uiContent{
+    line-height: 1.5;
+    color: #ffffff;
+    margin-bottom: 3rem;
+    text-align: center;
+   } 
+  .uiintro{
+   margin-bottom: .5rem;
+   font-weight: bold;
+   line-height: 1.2;
+   text-transform: capitalize;
+   color:#f3f3f3;
+   text-align: center;
+  }
+  .ProcessContainerDesign{
+    padding: 3% 8%;
+    background-color: #333;
+  }
+  .DesignTitle{
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .DesignDesc{
+    line-height: 1.5;
+    color: #ffffff;
+    text-align: center;
+  }
+  .DesignBox{
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .infoCon{
+    padding: 3% 8%;
+    background-color: #f3f3f5;
+  }
+  .infoConTitle{
+    line-height: 1.2;
+    color: #333;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  .infoCards{
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* hire developers css */
+  .hirecontainer{
+     padding: 8% 8%;
+     /* background-color: #cdd0fa; */
+  }
+  .hirerubyTitle{
+    font-weight: bold;
+    line-height: 1.2;
+    color: #333;
+    margin-bottom: .5rem;
+  }
+  .RailsEngineers{
+    padding: 2% 8%;
+  }
+  .partnerContainer{
+    display: flex;
+    justify-content: center;
+  }
+  @media ( min-width:900px) and  (  max-width:1200px) {
+    .engineerImage{
+      height: 600px;
+    }
+  }
+.industrySubtitle{
+  line-height: 1.5;
+  color:#333;
+  padding: 15px 0 0 0;
+  margin-bottom: 0.5rem;
+}
+.Professionals{
+  padding: 2% 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ProfessionalsTitle{
+  line-height: 1.2;
+  color: #333;
+  margin-bottom: 3rem;
+}
+.growth{
+width: 100%;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+padding: 2% 8% 5% 8%
+}
+.hirepart{
+  text-transform: capitalize;
+  color: #333;
+}
+.keyquality{
+  color: #ffffff;
+  line-height: 1.5;
+  text-align: center;
+}
+.nodeproffession{
+  line-height: 1.2;
+  color: #333;
+}
+.ProfessionalsTitlehire {
+  line-height: 1.2;
+  color: #333;
+}

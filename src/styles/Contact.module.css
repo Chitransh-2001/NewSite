@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "NovemberPro";
+  src: url("/assets/fonts/november-pro/NovemberPro-Reg.eot");
+  src: url("/assets/fonts/november-pro/NovemberPro.eot?#iefix") format("embedded-opentype");
+       /* url("/assets/fonts/november-pro/NovemberPro.woff2") format("woff2"),
+       url("/assets/fonts/november-pro/NovemberPro.woff") format("woff"); */
+  font-weight: normal;
+  font-style: normal;
+}
+
+  
+@font-face {
+    font-family: "NovemberPro-Reg";
+    src: url("/assets/fonts/november-pro/NovemberPro-Reg.eot");
+    src: url("/assets/fonts/november-pro/NovemberPro-Reg.eot?#iefix") format("embedded-opentype");
+         /* url("/assets/fonts/november-pro/NovemberPro-Reg.woff") format("woff"),
+         url("/assets/fonts/november-pro/NovemberPro-Reg.woff2") format("woff2"); */
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+
+@media screen and (max-width:1366px) and (max-height:768px){
+    .contactBanner{
+        font-size: 22px !important;
+    }
+}
+
+.contactBanner{
+    background-image: url("../../public/assets/img//contact-us1.png");
+    background-position: left;
+    margin: 100;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 690px;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    
+}   
+@media (max-width:512px){
+     .h1{
+        font-size: 30px !important;
+        text-align: center !important;
+        align-items: center;
+        flex-direction: column;
+     }
+}
+.container{
+     max-width: 960px;  
+
+}
+.containerInner{
+    position: relative;
+     padding-left: 60px; 
+}
+.row{
+    display: flex;
+    flex-wrap:wrap;
+}
+.h1{
+    font-weight: bold !important;
+    color: #fff;
+    font-family: "NovemberPro";
+    font-size: 50px;
+    
+}
+.contact{
+    padding: 6rem!important;
+}
+.details{
+    background-image: url('../../public/assets/img/home-bg-10-1.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    padding: 50px 50px;
+    height: 100%;
+    
+}
+

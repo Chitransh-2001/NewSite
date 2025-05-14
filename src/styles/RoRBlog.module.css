@@ -1,0 +1,314 @@
+.backgroundRor {
+  position: relative;
+  width: 100%;
+  height: 645px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../public/assets/img/homeBlog.png");
+}
+.backgroundRor::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+.imageSubTitle {
+  color: #fff;
+  padding-top: 250px;
+  padding-bottom: 20px;
+  opacity: 0.9;
+}
+.howRorContainer{
+  padding: 3% 6%;
+  background-image: url("../../public/assets/img/howror.png");
+  background-position: bottom left;
+  background-repeat: no-repeat;
+}
+.howRorTitle {
+  font-weight: bold;
+  line-height: 1.2;
+  color: #333333;
+  margin-bottom: .5rem;
+  text-align: center;
+}
+.howRorDesc{
+  padding: 10px 0 0 0;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.codeImg {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2% 0px 3% 0px;
+  flex-direction: column;
+  display: flex;
+}
+.whatRorcontainer {
+  padding: 2% 8% 3% 8%;
+  text-align: center;
+  color: #333;
+}
+.whatRorTitle{
+  font-weight: bold;
+  line-height: 1.2;
+  color: #333333;
+  margin-bottom: .5rem;
+  text-align: center;
+}
+.whatRorDesc{
+  padding: 10px 0 0 0;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.howRorCard {
+  padding: 2% 8% ;
+}
+.goodChoiceTitle{
+  font-weight: bold;
+  line-height: 1.2;
+  color: #333333;
+  margin-bottom: .5rem;
+  text-align: left;
+}
+.goodChoiceDesc{
+  padding: 10px 0 0 0;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  text-align: left  ;
+}
+.goodchoiceContainer{
+  padding:2% 8% ;
+}
+.cards{
+  border: 1px solid #ebebeb;
+  border-radius: 15px;
+  box-shadow: 8px 8px 30px 0 #2a43712e;
+  padding: 2% 0 ;
+}
+.CardTitle{
+  
+  font-weight: 500;
+  text-align: center;
+  color: #333333;
+  line-height: 1.2;
+  padding:0 5%; 
+  margin-bottom: .5rem;   
+}
+.subTitle{
+  letter-spacing: 2px;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom:.5rem ;
+  color: #650509;
+  text-align: center;
+}
+.des{
+  padding: 1% 6%;
+  text-align: center;
+  color:#333;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+.CardEnd{
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #333333;
+}
+.conclusionRor {
+  padding: 3% 0 3% 0;
+}
+.conclusionTitle{
+  font-weight: bold;
+  line-height: 1.2x;
+  color: #333333;
+  margin-bottom: .5rem;
+  text-align: center;
+}
+.conclusionDes{
+  margin-bottom: 1rem;
+  color:#333;
+  line-height: 1.5;
+  padding: 0 8%;
+}
+/* React Native  */
+.backgroundReact {
+  position: relative;
+  width: 100%;
+  height: 690px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../public/assets/img/reactNative.png");
+}
+.backgroundReact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+.imageSubTitleReactNative {
+  color: #fff;
+  padding-top: 250px;
+  padding-bottom: 20px;
+  opacity: 0.9;
+}
+.gameChanger{
+  padding: 6% 10% 0 10%;
+  background-image: url(/assets/img/gamechangerback.png);
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+.gameChangerGrid{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.gameChangerTitle{
+  font-weight: bold;
+  line-height: 1.2;
+  color: #333333;
+  margin-bottom: .5rem;
+}
+.gameChangerDes{
+  padding: 10px 0 0 0;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+.gameChangerButton{
+  cursor: pointer;
+}
+/* what is react native */
+.reactnative{
+  padding: 4% 10%;
+}
+.reactnativeGrid{
+  text-align: center;
+  flex-direction: column;
+}
+/* marketShare */
+.marketShare{
+  display: flex;
+  justify-content: center;
+  padding: 2%  8%;
+}
+/* whyReactNative */
+.whyReactNative{
+  padding: 2% 8%;
+}
+/* Why React Native?  */
+.Nativecard{
+  background-image: url(/assets/img/reactnativecard.png);
+  background-repeat: no-repeat;
+  background-position: center right;
+  padding-bottom: 30px;
+}
+.uspBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  padding:  4%;
+}
+.uspBox:hover {
+  border-color: #ebebeb;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+.uspBoxTitle {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  color: #333333;
+}
+.uspBoxDesc {
+  color: #333333;
+  line-height: 1.5;
+}
+/* Big firms that have reshaped with React Native Development */
+.reshaped{
+    padding: 4% 8%;
+    background-color: #f8f9fd;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.reshapedtitle{
+  font-weight: bold;
+  line-height: 1.2;
+  color: #333333;
+  margin-bottom: 1.5rem;
+}
+.reshapedContent{
+   text-align: center;
+   display: flex;
+   flex-wrap: wrap;
+}
+.reshapedContentLeft{
+  color: #650909;
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.reshapedContentLeftDesc{
+  padding: 10px 0 0 0;
+  color:#333;
+  line-height: 1.5;
+}
+.reshapedContentRight{
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color:#333333;
+  text-align: left;
+}
+.reshapedContentRightDesc{
+  padding:10px 0 0 0;
+  color:#333;
+  line-height: 1.5;
+  text-align: left;
+  margin: 0 15px;
+}
+.reshapedContentLeftDescIcon{
+  padding-right: 10px;
+  font-size: 30px;
+}
+/* conclusions  */
+.conclusion{
+  padding: 2% 8%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.conclusionReact{
+  font-weight: bold;
+  line-height: 1.2;
+  color: #333333;
+  padding:0 0 10px 0;
+}
+.conclusionReactDesc{
+  padding: 10px 0 0 0;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+

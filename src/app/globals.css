@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Theme Colors */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+}
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* Custom Fonts */
+@font-face {
+  font-family: "NovemberPro";
+  src: url("../fonts/novemberPro/NovemberPro.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NovemberPro-Reg";
+  src: url("../fonts/novemberPro/NovemberPro-Reg.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+#scrollUp {
+  background: #B30000 none repeat scroll 0 0;
+  bottom: 30px;
+  color: #fff;
+  font-size: 30px;
+  height: 40px;
+  line-height: 40px;
+  right: 60px;
+  text-align: center;
+  border-radius: 5px;
+  width: 40px;
+  position: fixed;
+  z-index: 2147483647;
+  cursor: pointer;
+  /* 	animation: witr_bounce 800ms ease-out infinite;	 */
+}
+#scrollUp i {
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  #scrollUp {
+    right: 25px;
+
+  }
+}

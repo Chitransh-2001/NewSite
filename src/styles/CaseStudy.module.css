@@ -1,0 +1,435 @@
+
+
+
+/* Default Styles */
+.background {
+  width: 100%;
+  height: 690px;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../public/assets/img/caseStudy.png");
+}
+
+.blogBackground {
+  width: 100%;
+  height: 690px;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  display: flex;
+  background-image: url("../../public/assets/img/blogsbackground.png");
+}
+
+.title {
+  color: #333;
+  
+}
+.CaseStudySubTitle {
+  color: #333;
+}
+
+.case {
+  /* text-align: center; */
+  /* font-size: 35px; */
+  font-weight: bold;
+  color: aliceblue;
+  padding: 280px 10%;
+}
+
+.container {
+  width: 100%;
+  margin: 80px auto 50px;
+  /* display: flex; */
+  min-width: 80%;
+  padding: 0 5%;
+  height: 100%;
+  gap: 100px;
+}
+
+/* Tabs Parts  */
+
+.studiesMain {
+}
+.tabOption {
+  font-size: 25px;
+  font-family: "NovemberPro";
+}
+.studyCards {
+  margin-top: 80px;
+}
+.studyCards1 {
+  min-height: 385px;
+  /* box-shadow: 1px #333; */
+  border: 1px solid #e1e1e1;
+}
+.activeTab {
+  color: #650909;
+}
+
+.cardBox {
+  flex-direction: column; /* Stacks items vertically */
+  align-items: center; /* Centers items horizontally */
+  justify-content: center; /* Centers items vertically */
+  /* text-align: center;    */
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+  height: 400px;
+}
+
+/* Services Parts */
+/* Client Achivement  */
+.mainAchivement {
+  background: #333;
+  padding: 100px 0 100px 0;
+}
+
+.achivementContainer {
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 0 10%;
+}
+.achivetitle {
+  font-weight: 800;
+  text-align: center;
+}
+.achiveSubtitle {
+  /* font-weight: 800; */
+  text-align: center;
+  margin-top: 10px;
+}
+.achiveData {
+  width: 100%;
+  text-align: center;
+  margin-top: 100px;
+}
+.archiveSubData {
+  /* border: 1px solid #fff; */
+  /* border-radius: 10px; */
+}
+
+.brightness {
+  background: #fff;
+  border-radius: 50%;
+}
+
+/* Integrated tech Stack */
+
+.techMain {
+  margin-top: 80px;
+}
+.techHeading {
+  text-align: left;
+  padding-bottom: 30px;
+}
+.techContainer {
+  text-align: start;
+  /* padding: 5%; */
+}
+.techBox {
+  background-color: #fff;
+  box-shadow: 1px #333;
+  border-radius: 10px;
+  color: #333;
+  padding:2% 5%;
+  text-align: center;
+}
+
+/* The Solutions  */
+
+.solutionsMain {
+  background: #333;
+  width: 100%;
+  padding: 40px 0 60px 0;
+}
+
+.solutionContainer {
+  padding: 0 10%;
+  color: #fff;
+  width: 100%;
+}
+.solutionContent {
+  margin-top: 40px;
+}
+.solutionHeading {
+  font-weight: 800;
+  text-align: center;
+  /* padding: 1.5rem; */
+}
+
+/* Client and Product Goals & also Portal CSS  */
+
+.productMain {
+  width: 100%;
+  background: #ececec;
+  padding: 100px 0 100px 0;
+}
+.productContainer {
+  width: 100%;
+  padding: 2% 10% 2% 10%;
+}
+
+.productHeading {
+  font-weight: 800;
+  color: #333;
+}
+.productDes {
+  margin-top: 10px !important;
+  margin-bottom: 20px !important;
+  color: #333;
+}
+.productSubTitle {
+  font-family: "NovemberPro";
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #333;
+}
+.productButton {
+  color: #fff;
+  text-transform: capitalize;
+}
+.productData {
+  flex-direction: column; /* Stacks items vertically */
+  align-items: center; /* Centers items horizontally */
+  justify-content: center; /* Centers items vertically */
+  display: flex;
+}
+/* Working of the Portal:  */
+/* Features  */
+.featuresMain {
+  background: #fff;
+  padding: 50px 0 50px 0;
+}
+.featureContainer {
+  width: 100%;
+  padding: 0% 5%;
+}
+.featureCards {
+  font-family: "NovemberPro-Reg";
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.featureHeader {
+  font-family: "NovemberPro";
+  font-weight: 800;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.featureBox {
+  display: flex; /* Enables Flexbox */
+  flex-direction: column; /* Stacks items vertically */
+  justify-content: center; /* Centers items vertically */
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  padding: 1% 6%;
+  background-color: #fff;
+}
+
+/* Contact Container  */
+
+.contactMain {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.gridContainer {
+  margin: 5% 10%;
+  padding: 5% 10%;
+  column-gap: 30%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+  /* background-size: cover; */
+  background-image: url("../../public/assets/img/caseStudy.png");
+  color: #fff;
+  text-align: center;
+}
+
+.gridContainerContact {
+  margin: 5% ;
+  padding: 3% ;
+  /* column-gap: 30%; */
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../public/assets/img/getintouch.png");
+  color: #fff;
+  text-align: center;
+}
+
+/* On Schlorship Css  */
+/* 
+.backgroundSchlorship {
+  width: 100%;
+  height: 690px;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../public/assets/img/start-up-slide3.webp");
+} */
+.backgroundSchlorship {
+  position: relative;
+  width: 100%;
+  height: 690px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../public/assets/img/start-up-slide3.webp");
+}
+
+.backgroundSchlorship::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+.imageTitle {
+  color: rgb(183, 46, 52);
+  padding-top: 250px;
+  padding-bottom: 20px;
+  padding-left: 9%;
+  opacity: 0.9;
+}
+.imageSubTitle {
+  color: #fff;
+  padding: 0 30% 0 9%;
+  opacity: 0.9;
+}
+
+/* Digital Payments  */
+
+.backgroundPayments {
+  position: relative;
+  width: 100%;
+  height: 690px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../public/assets/img/start-up-slide1.webp");
+}
+
+.backgroundPayments::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+/* Diversity Css  */
+
+.backgroundDiversity {
+  position: relative;
+  width: 100%;
+  height: 690px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../public/assets/img/start-up-slide5.webp");
+}
+
+.backgroundDiversity::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+/* PlatForm Css  */
+
+.backgroundPlatform {
+  position: relative;
+  width: 100%;
+  height: 690px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../public/assets/img/start-up-slide6.webp");
+}
+
+.backgroundPlatform::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+/* Freelance css  */
+
+.backgroundFreelance {
+  position: relative;
+  width: 100%;
+  height: 690px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../public/assets/img/start-up-slide4.webp");
+}
+
+.backgroundFreelance::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+/* solution freelance part */
+.freeContainer{
+  padding-top: 3%;
+}
+/* .client{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;  
+} */
+.freetitle{
+  font-weight: bold;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  }
+  .freeDesc{
+    margin-bottom: 1rem;
+    color:#ffffff;
+    line-height: 1.5;
+    }
+    /* .freeBox{
+      border: 1px solid #ebebeb;
+      border-radius: 10px;
+      margin: 2% 0 ;
+      text-align: center;
+      padding: 10px 0;
+    } */
+

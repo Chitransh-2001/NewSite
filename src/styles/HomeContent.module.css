@@ -1,0 +1,277 @@
+
+
+.whoweContainer {
+  width: 100%;
+  padding: 0 5%;
+}
+
+.whoTitle {
+  font-family: "NovemberPro" !important;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #650909;
+}
+.whoSubTitle {
+  font-family: "NovemberPro" !important;
+  font-weight: 600;
+  margin-bottom: 8px !important;
+  color: #333;
+}
+
+.whoDes {
+  font-family: "NovemberPro-Reg" !important;
+  /* padding: 0px 0px 10px 0px; */
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  color: #333;
+}
+.whoweImage{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.whoTitle {
+  font-size: 26px; /* Default for mobile */
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  /* sm */
+  .whoTitle {
+    font-size: 30px;
+  }
+}
+@media (max-width: 600px) {
+  /* sm */
+  .keybackground {
+    padding: 0 5%;
+  }
+}
+
+@media (max-width: 1200px) {
+  /* sm */
+  .keybackground {
+    padding: 0 3%;
+  }
+  .keyMoaral {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 900px) {
+  /* md */
+  .whoTitle {
+    text-align: left;
+  }
+}
+
+
+/* Drive  */
+
+.driveContent {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: "NovemberPro";
+  width: 100%;
+}
+
+.driveHeader {
+  font-family: "NovemberPro" !important;
+  font-weight: 600;
+  width: 100%;
+  color: #333;
+}
+
+.drivedes {
+  font-family: "NovemberPro-Reg" !important;
+  color: #333;
+}
+.cardContainer {
+  padding: 2% 10%;
+}
+.cardClass {
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+@media (max-width: 900px) {
+  /* sm */
+  .cardContainer {
+    padding: 2% 15%;
+  }
+  .cardImage {
+    width: 40%;
+  }
+  .cardCss {
+    max-height: 0;
+  }
+}
+
+@media (max-width: 512px) {
+  /* sm */
+  .cardContainer {
+    padding: 2% 8%;
+  }
+}
+
+.titledrive {
+  font-family: "NovemberPro" !important;
+  font-weight: 600;
+  color: #333;
+}
+
+.desdrive {
+  font-family: "NovemberPro-Reg" !important;
+  text-align: center;
+  padding: 0 5px;
+  color: #333;
+}
+
+/* Our Key Morals  */
+
+.keybackground {
+}
+
+.keyMoaralHead {
+  font-family: "NovemberPro" !important;
+  font-weight: 600;
+  color: #333;
+}
+.keyMoaralDes {
+  font-family: "NovemberPro-Reg" !important;
+  color: #333;
+}
+.fontSty {
+  font-family: "NovemberPro";
+  font-weight: 600;
+  color: #333;
+}
+
+.card1Header {
+  text-align: center;
+  font-family: "NovemberPro" !important;
+  font-weight: 600;
+  color: #333;
+}
+.card1SubHeader {
+  font-family: "NovemberPro-Reg" !important;
+  text-align: center;
+  font-size: 16px !important;
+  color: #333;
+}
+
+@media (min-width: 1200px) and (max-width: 1250px) {
+  .cardHeight {
+    height: 375px;
+    min-height: 375px;
+  }
+}
+@media (min-width: 1250px) and (max-width: 1500px) {
+  .cardHeight {
+    height: 375px;
+    min-height: 375px;
+  }
+}
+
+/* Industries we serve  */
+
+.industryBackground {
+  background-color: #333;
+  width: 100%;
+  padding: 40px 40px 40px 40px;
+  margin-top: 30px;
+}
+.industryContainer {
+  width: 100%;
+  padding: 0 10%;
+}
+
+.industryCards {
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  padding: 3% 5%;
+  gap: 15px;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .industryCards {
+    width: 350px;
+  }
+}
+
+.industryHeader {
+  margin-bottom: 32px !important;
+  text-align: center;
+  color: #fff;
+}
+
+.industryCount {
+  margin-bottom: 20px;
+  font-family: "NovemberPro";
+}
+
+.industryName {
+  text-transform: uppercase;
+  color: #333;
+}
+.moralBox{
+  border: 1px solid #ebebeb;
+  padding: 30px 27px 55px 27px;
+  min-width: 270px;
+  min-height: 350px;
+  border-radius: 10px;
+  transition: "border 0.3s ease";
+  background-color: #fff;
+}
+@media (max-width:1200px) {
+  .moralBox{
+    min-height: 425px;
+  }
+}
+@media(max-width:899px){
+  .moralBox{
+    min-height: 270px;
+  }
+}
+.moralBox:hover{
+    border-color:  #ebebeb;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+    background-color: #fff;
+    /* min-width: 370px;
+    min-height: 300px; */
+}
+.techMoral{
+  border: 1px solid #ebebeb;
+  margin-bottom: 20px;
+  padding:10px 20px ;
+  
+}
+.moralTitle{
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.moralDesc{
+  line-height: 1.5;
+  color: #333;
+}
+.moraltechtitle{
+    line-height: 1.2;
+    color: #333;
+}
