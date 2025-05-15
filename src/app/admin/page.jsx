@@ -1,63 +1,84 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import {signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./../../../lib/firebase";
 import { onAuthStateChanged } from "firebase/auth";
+import FullScreenLoader from "../../components/loadingscreen/FullScreenLoader";
+
 export default function LoginPage() {
   const router = useRouter();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false); // Loading state
+
 useEffect(() => {
   const unsubscribe = onAuthStateChanged(auth, (user) => {
     if (user) {
       console.log("User signed in:", user.uid);
+      router.push("/jobboard");
+
     } else {
       console.log("No user signed in");
+      router.push("/admin");
     }
   });
+
   return () => unsubscribe();
 }, []);
-  useEffect(() => {
-    // Redirect if already logged in
-    if (localStorage.getItem("auth") === "true") {
-      router.push("/jobboard");
-    }
-  }, []);
-  useEffect(()=>{
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // router.push("/login");
-        const uid = user?.uid;
-        console.log(uid,"uid")
-      } else{
-        // alert("User is s/igned out")
-      }
-    });
-  },[])
+
+  // useEffect(() => {
+  //   // Redirect if already logged in
+  //   if (localStorage.getItem("auth") === "true") {
+  //   }
+  // }, []);
+
+
+  // useEffect(()=>{
+  //   onAuthStateChanged(auth, (user) => {
+  //     if (user) {
+  //       // router.push("/login");
+  //       const uid = user?.uid;
+  //       console.log(uid,"uid")
+  //     } else{
+  //       alert("User is signed out")
+  //     }
+  //   });
+  // },[])
+
  const handleLogin = async (e) => {
   e.preventDefault();
+  setLoading(true); // Set loading state to true
   try {
     const userCredential = await signInWithEmailAndPassword(auth, username, password);
     const token = await userCredential.user.getIdToken();
+
     const response = await fetch('/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ token }),
     });
+
     const result = await response.json();
+
     if (!response.ok) {
       throw new Error(result.message || "Login failed");
     }
+
     localStorage.setItem('auth', 'true');
     localStorage.setItem('firebaseToken', token);
     router.push('/jobboard');
+
   } catch (error) {
     setError(error.message);
     console.error("Login error:", error);
+  } finally {
+    setLoading(false); // Reset loading state
   }
 };
+
   return (
     <div className="flex items-center justify-center h-screen">
       <div className="p-6 max-w-sm bg-white rounded-lg shadow-md">
@@ -90,12 +111,7 @@ useEffect(() => {
           </button>
         </form>
       </div>
+      {loading && <FullScreenLoader />} {/* Show loader when loading */}
     </div>
   );
 }
-
-
-
-
-
-
