@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { useEffect } from "react";
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import "./globals.css";
+import useInactivityLogout from "./../../lib/useInactivityLogout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +16,6 @@ const geistMono = Geist_Mono({
 });
 
 export default function RootLayout({ children }) {
-
   useEffect(() => {
     const scrollUp = document.getElementById("scrollUp");
 
@@ -79,6 +79,20 @@ export default function RootLayout({ children }) {
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+       
+        {/* <!-- Google tag (gtag.js) --> */}
+        <script
+          src="https://www.googletagmanager.com/gtag/js?id=G-R44FSHSD3N"
+          strategy="afterInteractive"
+        />
+        <script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-R44FSHSD3N');
+          `}
+        </script>
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <a
