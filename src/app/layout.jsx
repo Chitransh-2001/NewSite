@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { useEffect } from "react";
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import "./globals.css";
-import useInactivityLogout from "./../../lib/useInactivityLogout";
+// import useInactivityLogout from "./../../lib/useInactivityLogout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
