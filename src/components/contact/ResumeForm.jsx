@@ -25,6 +25,10 @@ const ResumeForm = () => {
   // const [resume, setResume] = useState(null);
    const [loading, setLoading] = useState(false);
    const [message, setMessage] = useState("");
+   const [selectedFile, setSelectedFile] = useState(null);
+   const [uploading, setUploading] = useState(false); 
+  //  const [fileUrl, setFileUrl] = useState(null);
+
    const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     firstName: "",
@@ -36,7 +40,9 @@ const ResumeForm = () => {
     role: "",
     position: "",
     profileUrl: "",
+    fileUrl: "",
   });
+  console.log("Form Data:", formData);
   const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
   const [isFormValid, setIsFormValid] = useState(false);
   const validateForm = () => {
@@ -61,23 +67,41 @@ const ResumeForm = () => {
     // Run validation after state update
     setTimeout(validateForm, 0);
   };
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (!file) return;
-    // Create a temporary URL for the uploaded file
-    const fileUrl = URL.createObjectURL(file);
-    // const reader = new FileReader();
-    // reader.readAsDataURL(file);
-    // reader.onload = () => {
-    //   const base64String = reader.result.split(",")[1];
-    //   setResume({filename: file.name,
-    //     content: base64String,
-    //     type: file.type,});
-    //   validateForm();
-    // };
-    console.log("Selected File:", fileUrl);
-    // setResume(file); // Store the file URL instead of base64
-    validateForm();
+  const handleFileChange = (e) => setSelectedFile(e.target.files[0]);
+  const handleUpload = async () => {
+    setUploading(true);
+    if (!selectedFile) return;
+
+    const reader = new FileReader();
+    reader.readAsArrayBuffer(selectedFile);
+    reader.onloadend = async () => {
+      const arrayBuffer = reader.result;
+
+      const response = await fetch('/api/upload', {
+        method: 'POST',
+        headers: {
+          'Content-Type': selectedFile.type,
+          'file-name': selectedFile.name,
+        },
+        body: arrayBuffer,
+      });
+
+      const data = await response.json();
+      if (data.fileUrl) {
+        console.log('File URL:', data.fileUrl);
+        // setFileUrl(data.fileUrl); // Store the file URL
+        setFormData((prev) => ({
+          ...prev,
+          fileUrl: data.fileUrl,
+        }));
+        setUploading(false);
+        // Use this URL in an email or store in Firebase
+      } else {
+        console.error('Upload failed');
+        setUploading(false);
+
+      }
+    };
   };
   const [jobs, setJobs] = useState([]);
   useEffect(() => {
@@ -306,13 +330,17 @@ const ResumeForm = () => {
               />
             </Grid>
             {/* Upload Resume */}
-            {/* <Grid size={{ xs: 12, md: 6 }}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <div
                 style={{
                   marginBottom: "5px",
                   fontFamily: "NovemberPro-Reg",
                   fontSize: "16px",
+                  cursor: "pointer",
+                  color: "#333",
                 }}
+                // onClick={handleUpload}
+
               >
                 Upload Your CV/Resume
               </div>
@@ -324,9 +352,36 @@ const ResumeForm = () => {
                   fontFamily: "NovemberPro-Reg",
                   fontSize: "14px",
                   cursor: "pointer",
+                  marginBottom: "10px",
+                  padding: "10px",
+                  cursor: "pointer",
                 }}
               />
-            </Grid> */}
+             <Typography
+              variant="contained"
+              color="primary"
+              sx={{
+                px: 3,
+                py: 1,
+                textTransform: "capitalize",
+                marginTop: "10px",
+                color: "#fff",
+                cursor: "pointer",
+                backgroundColor: "#333", // Gray when disabled
+                fontFamily: "NovemberPro-Reg",
+                borderRadius: 1,
+              }}
+              type="submit"
+              disabled={uploading}
+              onClick={handleUpload}
+            >
+              {uploading ? (
+            <CircularProgress size={22} thickness={6} sx={{ color: "#fff" }} />
+          ) : (
+            "Upload"
+          )}
+            </Typography>
+            </Grid>
             {/* Message Field */}
             <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6 }}>
               <TextField
