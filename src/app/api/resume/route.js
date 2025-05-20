@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
-  try {
+ try {
     const body = await req.json();
     const {formData } = body;
 
@@ -9,18 +9,18 @@ export async function POST(req) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    if (!process.env.EMAILJS_SERVICE_ID || !process.env.EMAILJS_TEMPLATE_ID_RESUME || !process.env.EMAILJS_PUBLIC_KEY || !process.env.EMAILJS_PRIVATE_KEY) {
-      return NextResponse.json({ error: "Missing environment variables" }, { status: 500 });
-    }
+    // if (!process.env.EMAILJS_SERVICE_ID || !process.env.EMAILJS_TEMPLATE_ID_RESUME || !process.env.EMAILJS_PUBLIC_KEY || !process.env.EMAILJS_PRIVATE_KEY) {
+    //   return NextResponse.json({ error: "Missing environment variables" }, { status: 500 });
+    // }
 
       const response = await fetch(`${process.env.EMAILJS_API_URL}/api/v1.0/email/send`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          service_id: process.env.EMAILJS_SERVICE_ID,
-          template_id: process.env.EMAILJS_TEMPLATE_ID_RESUME,
-          user_id: process.env.EMAILJS_PUBLIC_KEY,  // ✅ Add public key
-          accessToken: process.env.EMAILJS_PRIVATE_KEY,  // ✅ Add private key
+          service_id:  "service_hr2v78n",
+          template_id:  "template_f0iw4kd",
+          user_id: "HM0uehdoaG3J4QxDV",  // ✅ Add public key
+          accessToken:  "amFtmvKUIOIKiB-NicJzT",  // ✅ Add private key
           template_params: {
             formData: formData
           },
