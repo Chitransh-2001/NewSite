@@ -32,12 +32,15 @@ export default function Dashboard() {
   const [openEdit, setOpenEdit] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
   const [loadingJobs, setLoadingJobs] = useState(false);
+  const [checkingAuth, setCheckingAuth] = useState(true); // NEW: Track if we're still checking auth
+
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         console.log("User signed in:", user.uid);
-        router.push("/jobboard");
+        // router.push("/jobboard");
+        setCheckingAuth(false); // Set to false once auth check is done
       } else {
         console.log("No user signed in");
         router.push("/admin");
@@ -46,6 +49,35 @@ export default function Dashboard() {
 
     return () => unsubscribe();
   }, []);
+
+  useEffect(() => {
+    let inactivityTimeout;
+  
+    const setInactivityTimer = () => {
+      clearTimeout(inactivityTimeout);
+      inactivityTimeout = setTimeout(() => {
+        localStorage.removeItem('auth');
+        localStorage.removeItem('firebaseToken');
+        signOut(auth); // Firebase sign out
+        router.push('/admin');
+        // alert('Logged out due to inactivity');
+      }, 1 * 60 * 1000); // 15 minutes
+    };
+  
+    const resetTimerEvents = ['mousemove', 'keydown', 'click', 'scroll'];
+    resetTimerEvents.forEach((event) =>
+      window.addEventListener(event, setInactivityTimer)
+    );
+  
+    setInactivityTimer(); // Start timer initially
+  
+    return () => {
+      clearTimeout(inactivityTimeout);
+      resetTimerEvents.forEach((event) =>
+        window.removeEventListener(event, setInactivityTimer)
+      );
+    };
+  }, [router]);
 
   const fetchJobs = async ({ forceRefresh = false } = {}) => {
     setLoadingJobs(true);
@@ -275,7 +307,7 @@ export default function Dashboard() {
             onUpdate={handleUpdate}
           />
         )}
-        {loadingJobs && <FullScreenLoader />}
+        {(loadingJobs || checkingAuth) && <FullScreenLoader />}
       </div>
     </div>
   );
