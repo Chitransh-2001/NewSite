@@ -28,6 +28,8 @@ const ResumeForm = () => {
    const [selectedFile, setSelectedFile] = useState(null);
    const [uploading, setUploading] = useState(false); 
   //  const [fileUrl, setFileUrl] = useState(null);
+   const [uploadText, setUploadText] = useState("Upload");
+
 
    const [error, setError] = useState("");
   const [formData, setFormData] = useState({
@@ -69,8 +71,8 @@ const ResumeForm = () => {
   };
   const handleFileChange = (e) => setSelectedFile(e.target.files[0]);
   const handleUpload = async () => {
-    setUploading(true);
     if (!selectedFile) return;
+    setUploading(true);
 
     const reader = new FileReader();
     reader.readAsArrayBuffer(selectedFile);
@@ -89,6 +91,7 @@ const ResumeForm = () => {
       const data = await response.json();
       if (data.fileUrl) {
         console.log('File URL:', data.fileUrl);
+        setUploadText("Uploaded");
         // setFileUrl(data.fileUrl); // Store the file URL
         setFormData((prev) => ({
           ...prev,
@@ -357,30 +360,31 @@ const ResumeForm = () => {
                   cursor: "pointer",
                 }}
               />
-             <Typography
-              variant="contained"
-              color="primary"
-              sx={{
-                px: 3,
-                py: 1,
-                textTransform: "capitalize",
-                marginTop: "10px",
-                color: "#fff",
-                cursor: "pointer",
-                backgroundColor: "#333", // Gray when disabled
-                fontFamily: "NovemberPro-Reg",
-                borderRadius: 1,
-              }}
-              type="submit"
-              disabled={uploading}
-              onClick={handleUpload}
-            >
-              {uploading ? (
-            <CircularProgress size={22} thickness={6} sx={{ color: "#fff" }} />
-          ) : (
-            "Upload"
-          )}
-            </Typography>
+                 <Button
+            variant="contained"
+            color="primary"
+            sx={{
+              px: 3,
+              py: 1,
+              textTransform: "capitalize",
+              marginTop: "10px",
+              color: "#fff",
+              cursor: "pointer",
+              backgroundColor: "#333", // Gray when disabled
+              fontFamily: "NovemberPro-Reg",
+              borderRadius: 1,
+              minWidth: "102px",
+              minHeight: "40px",
+            }}
+            disabled={uploading || !selectedFile}
+            onClick={handleUpload}
+          >
+            {uploading ? (
+              <CircularProgress size={18} thickness={6} sx={{ color: "#fff" }} />
+            ) : (
+              uploadText
+            )}
+          </Button>
             </Grid>
             {/* Message Field */}
             <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6 }}>
