@@ -23,6 +23,8 @@ import { Delete, Edit } from "@mui/icons-material";
 import AddJobPost from "../../components/adminview/AddJobPost";
 import EditJobPost from "../../components/adminview/EditJobPost";
 import FullScreenLoader from "../../components/loadingscreen/FullScreenLoader";
+import ViewJobDetails from "../../components/adminview/ViewJobDetails";
+import DeleteJobsModal from "../../components/adminview/DeleteJobsModal";
 
 export default function Dashboard() {
   const router = useRouter();
@@ -31,9 +33,13 @@ export default function Dashboard() {
   const [jobs, setJobs] = useState([]);
   const [openEdit, setOpenEdit] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
+  console.log("selectedJob", selectedJob);
+  const [selectedJobDetails, setSelectedJobDetails] = useState(null);
+  const [openDelete, setOpenDelete] = useState(false);
   const [loadingJobs, setLoadingJobs] = useState(false);
   const [checkingAuth, setCheckingAuth] = useState(true); // NEW: Track if we're still checking auth
-
+  const [ViewJobDetail, setViewJobDetail] = useState(false);
+  const [deleteJobId, setDeleteJobId] = useState(null);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -52,25 +58,25 @@ export default function Dashboard() {
 
   useEffect(() => {
     let inactivityTimeout;
-  
+
     const setInactivityTimer = () => {
       clearTimeout(inactivityTimeout);
       inactivityTimeout = setTimeout(() => {
-        localStorage.removeItem('auth');
-        localStorage.removeItem('firebaseToken');
+        localStorage.removeItem("auth");
+        localStorage.removeItem("firebaseToken");
         signOut(auth); // Firebase sign out
-        router.push('/admin');
+        router.push("/admin");
         // alert('Logged out due to inactivity');
-      }, 1 * 60 * 1000); // 15 minutes
+      }, 15 * 60 * 1000); // 15 minutes
     };
-  
-    const resetTimerEvents = ['mousemove', 'keydown', 'click', 'scroll'];
+
+    const resetTimerEvents = ["mousemove", "keydown", "click", "scroll"];
     resetTimerEvents.forEach((event) =>
       window.addEventListener(event, setInactivityTimer)
     );
-  
+
     setInactivityTimer(); // Start timer initially
-  
+
     return () => {
       clearTimeout(inactivityTimeout);
       resetTimerEvents.forEach((event) =>
@@ -175,6 +181,11 @@ export default function Dashboard() {
     }
   };
 
+  const openJobPost = (job) => {
+    setViewJobDetail(true);
+    setSelectedJobDetails(job);
+  };
+
   const deleteJob = async (id) => {
     setLoadingJobs(true);
     try {
@@ -202,6 +213,7 @@ export default function Dashboard() {
   };
 
   const handleAddJob = () => {
+    console.log("Add");
     setOpen(true);
   };
 
@@ -272,21 +284,36 @@ export default function Dashboard() {
                   (job, index) => (
                     console.log(job, "job"),
                     (
-                      <TableRow key={index}>
+                      <TableRow
+                        sx={{ cursor: "pointer" }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          openJobPost(job);
+                        }}
+                        key={index}
+                      >
                         <TableCell>{job.title}</TableCell>
-                        {/* <TableCell>{job.skills}</TableCell> */}
                         <TableCell>{job.positions}</TableCell>
                         <TableCell>{job.openingDate}</TableCell>
                         <TableCell>{job.closingDate}</TableCell>
                         <TableCell>
                           <IconButton
                             color="error"
-                            onClick={() => deleteJob(job.id)}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setOpenDelete(true);
+                              setDeleteJobId(job.id);
+                            }}
                           >
                             <Delete />
                           </IconButton>
-                          <IconButton color="#333">
-                            <Edit onClick={() => handleEdit(job)} />
+                          <IconButton
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleEdit(job);
+                            }}
+                          >
+                            <Edit />
                           </IconButton>
                         </TableCell>
                       </TableRow>
@@ -299,7 +326,7 @@ export default function Dashboard() {
         </Paper>
 
         {open && <AddJobPost setOpen={setOpen} open={open} setJobs={setJobs} />}
-        {selectedJob && (
+        {openEdit && (
           <EditJobPost
             open={openEdit}
             setOpen={setOpenEdit}
@@ -307,7 +334,28 @@ export default function Dashboard() {
             onUpdate={handleUpdate}
           />
         )}
+
         {(loadingJobs || checkingAuth) && <FullScreenLoader />}
+        {ViewJobDetail && (
+          <ViewJobDetails
+            open={ViewJobDetail}
+            setOpen={setViewJobDetail}
+            selectedJob={selectedJobDetails}
+          />
+        )}
+
+        {openDelete && (
+          <DeleteJobsModal
+            open={openDelete}
+            onClose={() => setOpenDelete(false)}
+            onConfirm={() => {
+              // if (selectedJob) {
+              deleteJob(deleteJobId);
+              setOpenDelete(false);
+              // }
+            }}
+          />
+        )}
       </div>
     </div>
   );
