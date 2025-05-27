@@ -380,7 +380,7 @@ const ResumeForm = () => {
             onClick={handleUpload}
           >
             {uploading ? (
-              <CircularProgress size={18} thickness={6} sx={{ color: "#fff" }} />
+              <CircularProgress size={18} thickness={6} sx={{ color: "#333" }} />
             ) : (
               uploadText
             )}
@@ -444,11 +444,11 @@ const ResumeForm = () => {
                 textTransform: "capitalize",
                 backgroundColor: "#333", // Gray when disabled
                 fontFamily: "NovemberPro-Reg",
-                "&:hover": {
-                  backgroundColor: "#fff",
-                  border: "1px solid #333",
-                  color: "#333",
-                },
+                // "&:hover": {
+                //   backgroundColor: "#fff",
+                //   border: "1px solid #333",
+                //   color: "#333",
+                // },
               }}
               type="submit"
               disabled={loading}
