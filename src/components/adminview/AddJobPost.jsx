@@ -105,7 +105,7 @@ export default function AddJobPost({ setOpen, open, setJobs }) {
             p: 4,
             borderRadius: 2,
             width: "50vw",
-            maxWidth: 600,
+            maxWidth: 700,
             maxHeight: "90vh",
           }}
         >

@@ -176,7 +176,7 @@ const ResumeForm = () => {
           Join Our Team
         </Typography>
       </Grid>
-      <Grid container justifyContent="center" sx={{ padding: "3% 10%" }}>
+      <Grid id="apply" container justifyContent="center" sx={{ padding: "8% 10%" }}>
         <Box
           component="form"
           onSubmit={handleSubmit}
