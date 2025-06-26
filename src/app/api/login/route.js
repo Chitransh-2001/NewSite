@@ -1,9 +1,5 @@
 import { initializeApp, cert, getApps } from 'firebase-admin/app';
 import { getAuth } from 'firebase-admin/auth';
-<<<<<<< HEAD
-=======
-
->>>>>>> 2db508bd7a6599d73d6582c927f66380b38ebd84
 const client = process.env.NEXT_PUBLIC_FIREBASE_CLIENT_URL;
 const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY || "{}");
 const private_key = serviceAccount.private_key || "";
