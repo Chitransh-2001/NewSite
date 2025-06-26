@@ -4,7 +4,6 @@ const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY || "{
 const private_key = serviceAccount.private_key || "";
 const project = serviceAccount.project_id || "";
 const client = serviceAccount.client_email || "";
-
 const privateId = private_key.replace(/\\n/g, '\n');
 if (!getApps().length) {
   initializeApp({
