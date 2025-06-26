@@ -1,14 +1,15 @@
 import { initializeApp, cert, getApps } from 'firebase-admin/app';
 import { getAuth } from 'firebase-admin/auth';
-const client = process.env.NEXT_PUBLIC_FIREBASE_CLIENT_URL;
 const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY || "{}");
 const private_key = serviceAccount.private_key || "";
-const project_id = serviceAccount.project_id || "";
+const project = serviceAccount.project_id || "";
+const client = serviceAccount.client_email || "";
+
 const privateId = private_key.replace(/\\n/g, '\n');
 if (!getApps().length) {
   initializeApp({
     credential: cert({
-      projectId: project_id,
+      projectId: project,
       clientEmail: client,
       privateKey: privateId,
     }),
