@@ -30,6 +30,7 @@ const AboutUsPart = () => {
       value: "10+",
       desc: "Years of experience in Software development and technologies",
     },
+    
     { value: "50+", desc: "Software engineers and technical staff" },
     { value: "100+", desc: "Software designed, developed, and deployed" },
     { value: "100%", desc: "Customer satisfaction" },
